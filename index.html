@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZweiteReiheLinks</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+  <div class="header-container">
+    <h1 class="header-title">
+  <i class="fa-solid fa-film header-title-icon"></i>
+  <span class="header-title-full">ZweiteReiheLinks</span>
+  <span class="header-title-short">ZwReLi</span>
+</h1>
+    <div class="header-actions">
+      <a href="https://docs.google.com/spreadsheets/d/1FSgFA8Q2097dSFyUqh1ttkQvuzNSn3O8Qi3xlmGG4OE" target="_blank" class="theme-toggle-btn header-link-btn" title="View Raw Google Sheets Data">
+        <i class="fa-solid fa-table"></i> Raw Data
+      </a>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="rules-box" id="rules-box">
+    <div class="rules-header" id="rules-header">
+      <div><i class="fa-solid fa-circle-info"></i> Welcome and Rules</div>
+      <button class="rules-toggle-btn" id="rules-toggle-btn" aria-label="Toggle Welcome & Rules">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
+    </div>
+    <div class="rules-body">
+      <div class="rules-intro">Hi, I'm just starting out.</div>
+      <ul class="rules-list">
+        <li>
+          <i class="fa-solid fa-comments"></i>
+          <div>Please contact me :) My turnaround time is usually somewhere between an hour and a week. Feel free to send a friendly reminder if I haven't replied after a few days.</div>
+        </li>
+        <li>
+          <i class="fa-solid fa-list"></i>
+          <div>If you find something you want, please send your full list. But I'd be happy to take any recommendations with it.</div>
+        </li>
+        <li>
+          <i class="fa-solid fa-hard-drive"></i>
+          <div>I provide links via MEGA and accept MEGA and Google Drive for receiving.</div>
+        </li>
+        <li>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <div>My links will work for at least a week. Didn't manage in time? Just ask for a fresh link!</div>
+        </li>
+        <li>
+          <i class="fa-solid fa-file-video"></i>
+          <div>Please send original files only! No screen recordings, re-encodes, or rips.</div>
+        </li>
+        <li>
+          <i class="fa-solid fa-lock"></i>
+          <div>I strictly respect all NFT dates and other restrictions set by the master. Please do not request NFT items prior to their release date. No exceptions will be made!</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rules-box legend-box collapsed" id="legend-box">
+    <div class="rules-header" id="legend-header">
+      <div><i class="fa-solid fa-book-open"></i> Info, Stats & Legend</div>
+      <button class="rules-toggle-btn" id="legend-toggle-btn" aria-label="Toggle Legend">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
+    </div>
+    <div class="rules-body">
+
+      <div class="legend-section">
+        <h3 class="legend-section-heading">
+          <i class="fa-solid fa-chart-line legend-heading-icon"></i> General Info & Stats
+        </h3>
+
+        <ul class="rules-list legend-info-list">
+          <li>
+            <div>Use <code>YYYY-MM-DD</code> when seaching dates. For unknown day/month use "00". Search <code>2026-10-00</code> for undated "Oct 2026" recordings, or <code>2026-00-00</code> for recordings without a published month and day.</div>
+          </li>
+          <li>
+            <div>I am abbreviating a lot due to lack of space, but seachablity is still there. You can search "February", "Evening", "Revival" and "First National Tour", even though I list them as "Feb", "E", "Rev." and "1NT"</div>
+          </li>
+          <li>
+            <div>Painful as it is, city names use their English spelling (e.g., Cologne, not Köln)</div>
+          </li>
+          <li>
+            <div>Adaptations of English shows are listed under their English title.</div>
+          </li>
+          <li>
+    <div>Entries are sorted alphabetically by title (ignoring leading articles), then by date (newest to oldest)</div>
+  </li>
+  <li>
+    <div>Subtitles <span class="badge"><i class="fa-solid fa-closed-captioning"></i></span> <span class="badge"><i class="fa-solid fa-ear-deaf"></i></span> are not hardcoded (can be toggled on or off) - unless stated otherwise</div>
+  </li>
+  <li>
+    <i class="fa-solid fa-trophy"></i>
+    <div>
+      <strong>My firsts:</strong>
+      <span class="badge"><i class="fa-solid fa-cart-shopping"></i> 2026-10-18</span>
+      <span class="badge"><i class="fa-solid fa-gift"></i> 2026-10-19</span>
+      <span class="badge"><i class="fa-solid fa-arrows-rotate"></i> 2026-10-21</span>
+    </div>
+  </li>
+  <li>
+    <i class="fa-solid fa-chart-pie"></i>
+    <span id="catalog-stats"></span>
+  </li>
+</ul>
+      </div>
+
+      <div>
+        <h3 class="legend-section-heading">
+          <i class="fa-solid fa-icons legend-heading-icon"></i> Icon Legend
+        </h3>
+
+        <div class="legend-opt3">
+          <div class="legend-opt3-row">
+            <div class="legend-opt3-title">Base</div>
+            <ul class="legend-items cols-4">
+              <li><span class="badge"><i class="fa-solid fa-video"></i></span> <span>Video</span></li>
+              <li><span class="badge"><i class="fa-solid fa-headphones"></i></span> <span>Audio</span></li>
+              <li><span class="badge">DE</span> <span>Language</span></li>
+              <li><span class="badge"><i class="fa-solid fa-user-secret"></i></span> <span>Master</span></li>
+            </ul>
+          </div>
+
+          <div class="legend-opt3-row">
+            <div class="legend-opt3-title">Trading</div>
+            <ul class="legend-items">
+              <li><span class="badge"><i class="fa-solid fa-arrows-rotate"></i></span> <span>Trade</span></li>
+              <li><span class="badge"><i class="fa-solid fa-gift"></i></span> <span>Gift</span></li>
+              <li class="legend-spacer"></li>
+              <li><span class="badge badge-nft"><i class="fa-solid fa-arrows-rotate"></i></span> <span>NFT</span></li>
+              <li><span class="badge badge-nft"><i class="fa-solid fa-gift"></i></span> <span>NFG</span></li>
+              <li><span class="badge badge-nft"><i class="fa-solid fa-arrows-rotate"></i> Date</span> <span>NFT until</span></li>
+            </ul>
+          </div>
+
+          <div class="legend-opt3-row">
+            <div class="legend-opt3-title">File</div>
+            <ul class="legend-items">
+              <li><span class="badge"><i class="fa-solid fa-list"></i></span> <span>Tracked</span></li>
+              <li><span class="badge"><i class="fa-solid fa-hard-drive"></i></span> <span>File Size</span></li>
+              <li><span class="badge"><i class="fa-solid fa-clock"></i></span> <span>Runtime</span></li>
+              <li><span class="badge"><i class="fa-solid fa-database"></i></span> <span>EncoraID</span></li>
+              <li><span class="badge"><i class="fa-solid fa-closed-captioning"></i></span> <span>Subtitle</span></li>
+              <li><span class="badge"><i class="fa-solid fa-ear-deaf"></i></span> <span>SDH Subtitle</span></li>
+            </ul>
+          </div>
+
+          <div class="legend-opt3-row">
+            <div class="legend-opt3-title">Info</div>
+            <ul class="legend-items cols-4">
+              <li><span class="badge"><i class="fa-solid fa-users"></i></span> <span>Cast</span></li>
+              <li><span class="badge"><i class="fa-solid fa-circle-info"></i></span> <span>Notes</span></li>
+              <li><span class="badge"><i class="fa-solid fa-images"></i></span> <span>Preview</span></li>
+              <li><span class="badge badge-copy-legend"><i class="fa-regular fa-copy"></i></span> <span>Copy</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="legend-footer-note">
+        <div class="legend-footer-item">
+          <i class="fa-solid fa-database"></i>
+          <span>Any extra info, cast details, or corrections for my listings are always appreciated. I don't have an Encora account yet - an invite would be super welcome!</span>
+        </div>
+        <div class="legend-footer-item">
+          <i class="fa-solid fa-lightbulb legend-footer-bulb"></i>
+          <span>If you find anything unintuitive or have suggestions for improvement, please contact me!</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <input type="text" id="search-input" class="search-box" placeholder="🔍 Search by Title, Location, Date, Master, Cast, ... (e.g. Hadestown MTTZ 2026)">
+  <div id="filter-container" class="filter-container"></div>
+  <div id="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading catalog data...</div>
+  <div id="catalog-container"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
